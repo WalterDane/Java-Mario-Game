@@ -1,11 +1,7 @@
-import javax.swing.JPanel;
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.imageio.ImageIO;
-import java.io.IOException;
 import java.io.File;
-import javax.swing.JButton;
 
 public class Mario extends Sprite
 {
@@ -116,8 +112,6 @@ public class Mario extends Sprite
 
 	public void draw(Graphics g){
 		
-		//"Looping" through images
-		int mariosCurrentXPosition = getMariosXPosition();
 		int mariosCurrentYPosition = getMariosYPosition();
 
 		int currentMarioImagePosition = marioImagePosition % 5;

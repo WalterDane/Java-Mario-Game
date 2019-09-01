@@ -3,11 +3,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.imageio.ImageIO;
-import java.io.IOException;
 import java.io.File;
-import javax.swing.JButton;
-import java.util.ArrayList;
-import java.util.*;
 
 //This class presents the model
 class View extends JPanel
@@ -35,9 +31,7 @@ class View extends JPanel
 		//Draw the background
 		int width = -940 * 2;
 		for(int i = 1; i<5; i++){
-			int increment = 940;
-
-			if(i % 2 == 1){
+			if (i % 2 == 1) {
 				g.drawImage(this.background_image, width - Sprite.scrollPosition/2, 0, 940, 900, null);
 				width += 940 * 2;
 			} else {

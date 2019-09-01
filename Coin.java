@@ -1,20 +1,16 @@
-import javax.swing.JPanel;
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
-import javax.imageio.ImageIO;
-import java.io.IOException;
 import java.io.File;
-import javax.swing.JButton;
-import java.util.*;
+
+import javax.imageio.ImageIO;
 
 class Coin extends Sprite{
 	
 	//MARK: Member variables
 	static Image coin = null;
 	static double randz = Math.random();
-	double horizontalVelocity = (Math.random()*((7 - (-7))+1))+(-7);
-	double verticalVelocity = 6.1;
+	double horizontalVelocity = (Math.random()*((5 - (-5))+5))+(-5);
+	double verticalVelocity = -5.1;
 	private int framesSinceCoinCameOutOfBlock = 0;
 
 	//MARK: Constructor
@@ -22,7 +18,6 @@ class Coin extends Sprite{
 
 		if(coin == null){
 			coin = loadImage("coin.png");
-			//System.out.println("loading coin image");
 		}
 
 		x = xx;
@@ -31,20 +26,18 @@ class Coin extends Sprite{
 
 	//MARK: Method overriding
 	public void draw(Graphics g){
-
 		g.drawImage(coin, x - Sprite.scrollPosition, y, null);
 	}
 
 	public void update(){
 		framesSinceCoinCameOutOfBlock++;
-
+		y += verticalVelocity;
 		x += horizontalVelocity;
-		if(framesSinceCoinCameOutOfBlock < 20){
-			y -= 7;
+		if(framesSinceCoinCameOutOfBlock < 5){
+			verticalVelocity -= 2.9;
 		} else {
-			y += verticalVelocity;
+			verticalVelocity += 7.1;
 		}
-
 	}
 
 	private Image loadImage(String imagePNG){

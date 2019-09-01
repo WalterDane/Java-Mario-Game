@@ -1,11 +1,4 @@
-import javax.swing.JPanel;
-import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Image;
-import javax.imageio.ImageIO;
-import java.io.IOException;
-import java.io.File;
-import javax.swing.JButton;
 
 enum Position {
 	LEFT, RIGHT, ABOVE, BELOW
@@ -44,7 +37,7 @@ abstract class Sprite{
 		return false;
 	}
 	public void incrementXPosition(int xx){
-		System.out.println(x);
+		//System.out.println(x);
 		x += xx;
 	}
 	public void decrementXPosition(int xx){

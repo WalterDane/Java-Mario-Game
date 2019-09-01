@@ -14,89 +14,93 @@ class Controller implements ActionListener, MouseListener, KeyListener
 	Model model;
 	private boolean keyLeft;
 	private boolean keyRight;
-	private boolean keyUp;
-	private boolean keyDown;
 	private boolean keySpace;
-	private boolean keySpaceInitialPress;
 	private int mousePressedXPos = 0;
 	private int mousePressedYPos = 0;
 	private boolean spaceFlag = false;
 
-	//MARK: Constructor - initializes variables and methods
-	Controller(Model m)
-	{
+	// MARK: Constructor - initializes variables and methods
+	Controller(Model m) {
 		model = m;
 	}
 
-	//MARK: Public methods
-	public void actionPerformed(ActionEvent e)
-	{
-		
+	// MARK: Public methods
+	public void actionPerformed(ActionEvent e) {
+
 	}
 
-	public void setView(View v)
-	{
+	public void setView(View v) {
 		view = v;
 	}
 
-	//MARK: Mouse listener methods
-	public void mousePressed(MouseEvent e)
-	{
+	// MARK: Mouse listener methods
+	public void mousePressed(MouseEvent e) {
 		mousePressedXPos = e.getX();
 		mousePressedYPos = e.getY();
 	}
 
-	public void mouseReleased(MouseEvent e) { 
+	public void mouseReleased(MouseEvent e) {
 
 		int x1 = mousePressedXPos;
 		int x2 = e.getX();
 		int y1 = mousePressedYPos;
 		int y2 = e.getY();
 		int left = Math.min(x1, x2);
-		int right = Math.max(x1,x2);
+		int right = Math.max(x1, x2);
 		int top = Math.min(y1, y2);
 		int bottom = Math.max(y1, y2);
 
-		System.out.println(left + Sprite.scrollPosition);
+		/*System.out.println(left + Sprite.scrollPosition);
 		System.out.println(top);
 		System.out.println(right - left);
-		System.out.println(bottom - top);
+		System.out.println(bottom - top);*/
 		model.addBrick(left + Sprite.scrollPosition, top, right - left, bottom - top);
 	}
 
-	public void mouseEntered(MouseEvent e) {   
-		
-	 }
+	public void mouseEntered(MouseEvent e) {
 
-	public void mouseExited(MouseEvent e) {
-		
 	}
 
-	public void mouseClicked(MouseEvent e) { 
+	public void mouseExited(MouseEvent e) {
 
-    }
+	}
 
-	//MARK: Key listener methods
-	public void keyPressed(KeyEvent e)
-	{
-		switch(e.getKeyCode())
-		{
-			case KeyEvent.VK_RIGHT: keyRight = true; break;
-			case KeyEvent.VK_LEFT: keyLeft = true; break;
-			case KeyEvent.VK_UP: keyUp = true; break;
-			case KeyEvent.VK_DOWN: keyDown = true; break;
-			case KeyEvent.VK_SPACE: keySpace = true; spaceFlag = true; break;
+	public void mouseClicked(MouseEvent e) {
+
+	}
+
+	// MARK: Key listener methods
+	public void keyPressed(KeyEvent e) {
+		switch (e.getKeyCode()) {
+		case KeyEvent.VK_RIGHT:
+			keyRight = true;
+			break;
+		case KeyEvent.VK_LEFT:
+			keyLeft = true;
+			break;
+		case KeyEvent.VK_UP:
+			break;
+		case KeyEvent.VK_DOWN:
+			break;
+		case KeyEvent.VK_SPACE:
+			keySpace = true;
+			spaceFlag = true;
+			break;
 		}
 	}
 
-	public void keyReleased(KeyEvent e)
-	{
-		switch(e.getKeyCode())
-		{
-			case KeyEvent.VK_RIGHT: keyRight = false; break;
-			case KeyEvent.VK_LEFT: keyLeft = false; break;
-			case KeyEvent.VK_UP: keyUp = false; break;
-			case KeyEvent.VK_DOWN: keyDown = false; break;
+	public void keyReleased(KeyEvent e) {
+		switch (e.getKeyCode()) {
+		case KeyEvent.VK_RIGHT:
+			keyRight = false;
+			break;
+		case KeyEvent.VK_LEFT:
+			keyLeft = false;
+			break;
+		case KeyEvent.VK_UP:
+			break;
+		case KeyEvent.VK_DOWN:
+			break;
 			case KeyEvent.VK_S: model.save("map.json"); break; //Saving JSON information
 			// case KeyEvent.VK_L: Json loadObject = Json.load("map.json"); //Loading JSON information
 			// 					model.load(loadObject); break;

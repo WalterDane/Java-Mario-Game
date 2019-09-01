@@ -1,11 +1,8 @@
-import javax.swing.JPanel;
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
-import javax.imageio.ImageIO;
-import java.io.IOException;
 import java.io.File;
-import javax.swing.JButton;
+
+import javax.imageio.ImageIO;
 
 public class Brick extends Sprite {
 	
@@ -18,7 +15,7 @@ public class Brick extends Sprite {
 
 		if(brick_image == null) {
 			brick_image = loadBrickImage("brick_image.png");
-			System.out.println("loading brick image");
+			//System.out.println("loading brick image");
 		}
 
 		//System.out.println("creating a new brick");
