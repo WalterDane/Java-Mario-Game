@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.*;
 
-//This class is "The brain of the game"
 class Model
 {
 	//MARK: Instance variables
@@ -132,8 +131,7 @@ class Model
 	}
 
 	public void addBricks(){
-		Brick b = new Brick(594, 347, 62, 131);
+		Brick b = new Brick(594, 347, 130, 130);
 		sprites.add(b);
 	}
-
 }

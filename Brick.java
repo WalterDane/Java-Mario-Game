@@ -15,10 +15,8 @@ public class Brick extends Sprite {
 
 		if(brick_image == null) {
 			brick_image = loadBrickImage("brick_image.png");
-			//System.out.println("loading brick image");
 		}
 
-		//System.out.println("creating a new brick");
 		x = _x;
 		y = _y;
 		width = _w;

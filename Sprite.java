@@ -5,8 +5,7 @@ enum Position {
 }
 
 abstract class Sprite{
-	
-	//MARK: Member variables
+
 	static int scrollPosition = 0;
 	public int x = 0;
 	public int y = 0;
@@ -50,7 +49,6 @@ abstract class Sprite{
 		//Check if mario is colliding with Sprite
 		if((s.x + s.width) < x - 240){
 			isColliding = false;
-			//System.out.println("is colliding is false");
 		} else if (s.x > ((x - 240) + width)){
 			isColliding = false;
 		} else if ((s.y) > (y + height)){
@@ -58,9 +56,6 @@ abstract class Sprite{
 		} else if ((s.y + s.height) < y){
 			isColliding = false;
 		} else {
-			// System.out.println("Marios x position and width position = " + s.x + s.width);
-			// System.out.println("bricks x position = " + x);
-			// System.out.println("is colliding is true");
 			isColliding = true;
 		}
 
